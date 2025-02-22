@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.imageslider.databinding.FragmentPageBinding
+import com.example.imageslider.model.slides
 
 const val SLIDE = "SLIDES_ARG"
+
 /**
  * Use the [PageFragment.newInstance] factory method to
  * create an instance of this fragment.
@@ -22,6 +24,7 @@ class PageFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         val position = requireArguments().getInt(SLIDE)
+        binding.image.setImageResource(slides[position])
     }
 
     override fun onCreateView(
